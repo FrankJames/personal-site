@@ -1,14 +1,68 @@
+{% load staticfiles %}
 <head>
 	<title>HEY</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="{% static 'siteApp/lib/jquery-1.11.3.min.js'%}"></script>
+	<script src="{% static 'siteApp/lib/underscore.min.js'%}"></script>
+	<script src="{% static 'siteApp/lib/backbone.min.js'%}"></script>
+	<script src="{% static 'siteApp/lib/marionette.min.js'%}"></script>
+
+	<script src="{% static 'siteApp/js/main-app-layout.js'%}"></script>
+	<script src="{% static 'siteApp/js/main-page-layout.js'%}"></script>
+	<script src="{% static 'siteApp/js/cs-layout.js'%}"></script>
+	<script src="{% static 'siteApp/js/frank-layout.js'%}"></script>
+	<script src="{% static 'siteApp/js/music-layout.js'%}"></script>
+	
 </head>
 <body>
-	<h2> HEY! </h2>
-	<p>this is an html file</p>
-	eventually this will be filled with backbone stuff, but for the time being what up
-	<p>things to do:</p>
-		<li>add in boostrap</li>
-		<li>add in backbone</li>
-		<li>make it look pretty</li>
-		<li>add in jquery</li>
-		<li>backend models and such</li>
+	<h2 class="text-center">HEY!</h2>
+	<div id="MainRegion"></div>
+	<script type="text/template" id="template-MainAppLayoutView">
+		<h2>HEY THIS IS MY SITE</h2>
+		<h5>my site it's my site it's my site.</h5>
+
+		<div id="SideNavigation">
+			<div>
+				<a href="#home">Home</a>
+			</div>
+			<div>
+				<a href="#computerstuff">Computer Stuff</a>
+			</div>
+			<div>
+				<a href="#frankstuff">Frank Stuff</a>
+			</div>
+			<div>
+				<a href="#musicreviews">Music Reviews</a>
+			</div>
+		</div>
+		<div id="MainContentRegion"></div>
+	</script>
+	<script type="text/template" id="template-MainPageLayout">
+		<p>this is the main page</p>
+	</script>
+	<script type="text/template" id="template-CSLayout">
+		<p>this is where I will put somethin cs related</p>
+	</script>
+	<script type="text/template" id="template-FrankLayout">
+		<p>this is where I will put somethin about myself</p>
+	</script>
+	<script type="text/template" id="template-MusicLayout">
+		<p>this is where I will put somethin about myself</p>
+	</script>
+	<script>
+		var FJApp = FJApp || new Marionette.Application();
+		FJApp.addRegions({
+			MainRegion: "#MainRegion"
+		})
+		FJApp.on('start', function(){
+			Backbone.history.start();
+		});
+		FJApp.module('FJAppMainModule', function(module, App, Backbone, Marionette, $, _){
+			module.addInitializer(function(){
+				var mainAppLayoutView = new module.MainAppLayoutView({"foo": "bar"});
+				App.MainRegion.show(mainAppLayoutView);
+			});
+		});
+		FJApp.start();
+	</script>
 </body>
