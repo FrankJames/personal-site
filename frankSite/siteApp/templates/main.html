@@ -2,6 +2,7 @@
 <head>
 	<title>HEY</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="{% static 'siteApp/lib/platform-twitter.min.js'%}"></script>
 	<script src="{% static 'siteApp/lib/jquery-1.11.3.min.js'%}"></script>
 	<script src="{% static 'siteApp/lib/underscore.min.js'%}"></script>
 	<script src="{% static 'siteApp/lib/backbone.min.js'%}"></script>
@@ -10,7 +11,7 @@
 	<script src="{% static 'siteApp/js/main-app-layout.js'%}"></script>
 	<script src="{% static 'siteApp/js/main-page-layout.js'%}"></script>
 	<script src="{% static 'siteApp/js/cs-layout.js'%}"></script>
-	<script src="{% static 'siteApp/js/frank-layout.js'%}"></script>
+	<script src="{% static 'siteApp/js/writing-layout.js'%}"></script>
 	<script src="{% static 'siteApp/js/music-layout.js'%}"></script>
 	
 </head>
@@ -29,7 +30,7 @@
 				<a href="#computerstuff">Computer Stuff</a>
 			</div>
 			<div>
-				<a href="#frankstuff">Frank Stuff</a>
+				<a href="#writingstuff">Writing Stuff</a>
 			</div>
 			<div>
 				<a href="#musicreviews">Music Reviews</a>
@@ -43,8 +44,9 @@
 	<script type="text/template" id="template-CSLayout">
 		<p>this is where I will put somethin cs related</p>
 	</script>
-	<script type="text/template" id="template-FrankLayout">
-		<p>this is where I will put somethin about myself</p>
+	<script type="text/template" id="template-WritingLayout">
+		<p>this is where I will put somethin about writing</p>
+		<a class="twitter-timeline" href="https://twitter.com/tinyducks" data-widget-id="640729652898701312" data-chrome="nofooter">Tweets by @tinyducks</a>
 	</script>
 	<script type="text/template" id="template-MusicLayout">
 		<p>this is where I will put somethin about music</p>

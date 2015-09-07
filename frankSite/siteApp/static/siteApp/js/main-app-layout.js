@@ -23,7 +23,7 @@ FJApp.module('FJAppMainModule', function(module, App, Backbone, Marionette, $, _
 				'': 'onMainPageRoute',
 				'home': 'onMainPageRoute',
 				'computerstuff': 'onCSRoute',
-				'frankstuff': 'onFrankRoute',
+				'writingstuff': 'onWritingRoute',
 				'musicreviews': 'onMusicRoute',
 				'*notFound': 'onNotFoundRoute'
 			};
@@ -34,8 +34,8 @@ FJApp.module('FJAppMainModule', function(module, App, Backbone, Marionette, $, _
 				onCSRoute: function() {
 					self.onCSNavigated();
 				},
-				onFrankRoute: function() {
-					self.onFrankNavigated();
+				onWritingRoute: function() {
+					self.onWritingNavigated();
 				},
 				onMusicRoute: function() {
 					self.onMusicNavigated();
@@ -61,9 +61,9 @@ FJApp.module('FJAppMainModule', function(module, App, Backbone, Marionette, $, _
 			var csLayoutView = new CSLayoutView();
 			this.contentRegion.show(csLayoutView);
 		},
-		onFrankNavigated: function() {
-			var frankLayoutView = new FrankLayoutView();
-			this.contentRegion.show(frankLayoutView);
+		onWritingNavigated: function() {
+			var writingLayoutView = new WritingLayoutView();
+			this.contentRegion.show(writingLayoutView);
 		},
 		onMusicNavigated: function() {
 			var musicLayoutView = new MusicLayoutView();
