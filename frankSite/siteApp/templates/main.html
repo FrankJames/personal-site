@@ -1,4 +1,5 @@
 {% load staticfiles %}
+<!DOCTYPE html>
 <head>
 	<title>HEY</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -13,6 +14,8 @@
 	<script src="{% static 'siteApp/js/cs-layout.js'%}"></script>
 	<script src="{% static 'siteApp/js/writing-layout.js'%}"></script>
 	<script src="{% static 'siteApp/js/music-layout.js'%}"></script>
+
+	<link rel="stylesheet" href="{% static 'siteApp/css/style.css'%}">
 	
 </head>
 <body>
@@ -39,17 +42,21 @@
 		<div id="MainContentRegion"></div>
 	</script>
 	<script type="text/template" id="template-MainPageLayout">
-		<p>this is the main page</p>
+		<h3>Main Page</h3>
 	</script>
 	<script type="text/template" id="template-CSLayout">
-		<p>this is where I will put somethin cs related</p>
+		<h3>Computer Science</h3>
 	</script>
 	<script type="text/template" id="template-WritingLayout">
-		<p>this is where I will put somethin about writing</p>
+		<h3>Writing and Comedy</h3>
 		<a class="twitter-timeline" href="https://twitter.com/tinyducks" data-widget-id="640729652898701312" data-chrome="nofooter">Tweets by @tinyducks</a>
 	</script>
 	<script type="text/template" id="template-MusicLayout">
-		<p>this is where I will put somethin about music</p>
+		<h3>Music Reviews</h3>
+		<div>
+			<p>recently listened</p>
+			<img src="http://www.tapmusic.net/lastfm/collage.php?user=funkjams84&type=7day&size=2x8">
+		</div>
 	</script>
 	<script>
 		var FJApp = FJApp || new Marionette.Application();
@@ -67,4 +74,17 @@
 		});
 		FJApp.start();
 	</script>
+	<footer>
+		<div id="footerContactInfo">
+			<p>contact information: </p>
+				<li>Email: </li>
+				<li>Github: </li>
+				<li>LinkedIn: </li>
+		</div>
+		<div id="footerNotes">
+			<p>personal statement goes here! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquet est sit amet felis sollicitudin, sit amet accumsan libero ultricies. Cras ultrices mauris eu nunc egestas sollicitudin. Sed bibendum in lectus vel ultricies. Proin dictum erat id lectus luctus feugiat. Maecenas quis porttitor purus, at tempor elit. Integer ac congue metus. Fusce ut tincidunt diam, vel semper ipsum. Donec tortor leo, venenatis sed ligula vitae, lacinia pulvinar ligula. </p>
+			<p>-Frank, 2015</p>
+		</div>
+	</footer>
 </body>
+</html>
